@@ -13,4 +13,16 @@ class Records
         voter = Voter.new(name, political_affiliation)
         @voters.push(voter)
     end
+    
+    def create_politician(name, party_affiliation)
+        politician = Politician.new(name, party_affiliation)
+        @politicians.push(politician)
+    end
+    
+    def list
+        results = ""
+        
+        
+    end
+    
 end
