@@ -2,8 +2,8 @@ require './voter.rb'
 require './politician.rb'
 
 class Records
-    attr_reader :voters
-    attr_reader :politicians
+    attr_accessor :voters
+    attr_accessor :politicians
     def initialize
         @voters = []
         @politicians = []
@@ -37,4 +37,34 @@ class Records
         index = @voters.index{ |voter| voter.name ==name }    
     end
     
+    def search_politician(name)
+        index = @politicians.index{ |politician| politician.name ==name }
+    end
+    
+    def update_voter(old_name, new_name, new_affiliation)
+        index = search_voter(old_name)
+        
+        if index != nil
+            @voters[index].name = new_name
+            @voters[index].political_affiliation = new_affiliation
+        end
+    end
+    
+    def update_politician(old_name, new_name, new_affiliation)
+        index = search_politician(old_name)
+        
+        if index != nil
+            @politicians[index].name = new_name
+            @politicians[index].party_affiliation = new_affiliation
+        end
+    end
+    
+    def delete_voter(name)
+        index = search_voter(name)
+        
+        if index != nil
+            @voters.delete_at(index)
+        end
+    end
 end
+
