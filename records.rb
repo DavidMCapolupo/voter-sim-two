@@ -22,7 +22,19 @@ class Records
     def list
         results = ""
         
+        @voters.each do |voter|
+            results += "Voter, #{voter.name}, #{voter.political_affiliation}\n"
+        end
         
+        @politicians.each do |politician|
+            results += "Politician, #{politician.name}, #{politician.party_affiliation}\n"
+        end
+        
+        return results 
+    end
+    
+    def search(name)
+        index = @voters.index{ |voter| voter.name ==name }    
     end
     
 end
