@@ -21,7 +21,7 @@ describe Records do
         records.create_voter("John Doe", "Liberal")
         records.create_politician("Jane Doe", "Democrat")
         
-        expected_result = "Voter, John Doe, Liberal \nPolitician, Jane Doe, Democrat"
+        expected_result = "Voter, John Doe, Liberal\nPolitician, Jane Doe, Democrat\n"
         expect(records.list).to eq(expected_result)
     end
     

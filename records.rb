@@ -31,9 +31,9 @@ class Records
         end
         
         return results 
-    end
+    endr
     
-    def search(name)
+    def search_voter(name)
         index = @voters.index{ |voter| voter.name ==name }    
     end
     
