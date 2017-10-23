@@ -16,7 +16,6 @@ describe Voter do
     it "can report its political affiliation" do
         voter = Voter.new("John Doe", "Liberal")
         
-        expect(voter.political_affiliation).to eq(political_affiliation)
+        expect(voter.political_affiliation).to eq("Liberal")
     end
 end
-

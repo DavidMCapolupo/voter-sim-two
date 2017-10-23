@@ -81,8 +81,8 @@ describe Records do
         
         expect(records.voters.count).to eq(1)
         expect(records.search_voter("Lindsay Lohan")).to eq(nil)
-        
+    end
+    
     it "can delete a politician"
-
-# end
-# end
+    
+end
